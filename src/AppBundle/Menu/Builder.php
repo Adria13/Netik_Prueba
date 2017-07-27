@@ -18,18 +18,15 @@ class Builder extends ContainerAware
 
         $centroMedico = $em->getRepository('AppBundle:CentroMedico')->findMostRecent();
 
-        $menu->addChild('Ultimas entradas del blog', array(
-            'route' => 'blog_mostrar',
-            'routeParameters' => array('id' => $blog->getId())
+        $menu->addChild('Centros Medicos', array(
+            'route' => 'centro_medico_show',
+            'routeParameters' => array('id' => $centroMedico->getId())
         ));
 
-        // Creando otro apartado del menú:
-        $menu->addChild('Sobre mí', array('route' => 'sobremi'));
-        // Puedes también añadir subniveles a tus menús:
-        $menu['Sobre mi']->addChild('Editar perfil', array('route' => 'editar_perfil'));
-
-        // ... puedes añadir más subniveles...
-        return $menu;
+        $menu->addChild('Crear Centros Medicos', array(
+            'route' => 'centro_medico_new',
+            'routeParameters' => array('id' => $centroMedico->getId())
+        ));
     }
 }
 
