@@ -1,0 +1,18 @@
+centro_medico:
+    resource: "@AppBundle/Resources/config/routing/centroMedico.yml"
+    prefix:   /centrosMedicos
+
+medico:
+    resource: "@AppBundle/Resources/config/routing/Medico.yml"
+    prefix:   /medicos
+
+paciente:
+    resource: "@AppBundle/Resources/config/routing/Paciente.yml"
+    prefix:   /pacientes
+
+# compilator:
+#     path: /compilator
+#     defaults: { _controller: AppBundle:Default:compilator }
+#     methods:  [GET]
+#     requirements:
+#         id:  \d+

@@ -1,0 +1,24 @@
+centro_medico_index:
+    path:     /
+    defaults: { _controller: "AppBundle:CentroMedico:index" }
+    methods:  GET
+
+centro_medico_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:CentroMedico:show" }
+    methods:  GET
+
+centro_medico_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:CentroMedico:new" }
+    methods:  [GET, POST]
+
+centro_medico_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:CentroMedico:edit" }
+    methods:  [GET, POST]
+
+centro_medico_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:CentroMedico:delete" }
+    methods:  DELETE

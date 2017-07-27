@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Centromedicos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for centroMedico in centroMedicos %}
+            <tr>
+                <td><a href="{{ path('centromedico_show', { 'id': centroMedico.id }) }}">{{ centroMedico.id }}</a></td>
+                <td>{{ centroMedico.name }}</td>
+                <td>{{ centroMedico.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('centromedico_show', { 'id': centroMedico.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('centromedico_edit', { 'id': centroMedico.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('centromedico_new') }}">Create a new centroMedico</a>
+        </li>
+    </ul>
+{% endblock %}
